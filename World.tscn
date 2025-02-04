@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8gmm0daj3p7v"]
+
+[ext_resource type="Texture2D" uid="uid://b4libb70c5fhs" path="res://icon.svg" id="1_7mrab"]
+[ext_resource type="PackedScene" uid="uid://dehw4ibvaogdj" path="res://Player/Player.tscn" id="2_1wvj2"]
+[ext_resource type="PackedScene" uid="uid://bu3f2kdmgsj8h" path="res://Enemy/Skeleton.tscn" id="3_tkdbb"]
+[ext_resource type="PackedScene" uid="uid://brpvvboxmmvh4" path="res://Player/PlayerHealthUI.tscn" id="4_qyskv"]
+[ext_resource type="PackedScene" uid="uid://big3l13dnpmd0" path="res://Enemy/Boss/Orc.tscn" id="5_kcgib"]
+
+[node name="World" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(78, -82)
+texture = ExtResource("1_7mrab")
+
+[node name="Skeleton" parent="." instance=ExtResource("3_tkdbb")]
+position = Vector2(-226, 20)
+attackpow = 0
+
+[node name="Player" parent="." instance=ExtResource("2_1wvj2")]
+position = Vector2(-37, 63)
+
+[node name="Skeleton2" parent="." instance=ExtResource("3_tkdbb")]
+position = Vector2(-361, 269)
+
+[node name="Skeleton3" parent="." instance=ExtResource("3_tkdbb")]
+position = Vector2(635, 348)
+
+[node name="Skeleton4" parent="." instance=ExtResource("3_tkdbb")]
+position = Vector2(-858, -12)
+
+[node name="Skeleton5" parent="." instance=ExtResource("3_tkdbb")]
+position = Vector2(944, -368)
+
+[node name="Skeleton6" parent="." instance=ExtResource("3_tkdbb")]
+position = Vector2(-812, 892)
+
+[node name="PlayerHealthUI" parent="." instance=ExtResource("4_qyskv")]
+
+[node name="Boss" parent="." instance=ExtResource("5_kcgib")]
+position = Vector2(412, -58)

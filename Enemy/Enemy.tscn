@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://otc0yhkplpv0"]
+
+[ext_resource type="Script" path="res://Enemy/Enemy.gd" id="1_tnck1"]
+
+[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
+script = ExtResource("1_tnck1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AttackDetector" type="Area2D" parent="." groups=["Enemy_Attack_Detector"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackDetector"]
+
+[node name="AttackBox" type="Area2D" parent="." groups=["Enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox"]
+
+[node name="EnemyHealth" type="ProgressBar" parent="."]
+offset_left = -58.0
+offset_top = -47.0
+offset_right = 58.0
+offset_bottom = -20.0
+max_value = 4.0
+show_percentage = false
+
+[connection signal="body_entered" from="AttackDetector" to="." method="_on_attack_detector_body_entered"]
+[connection signal="body_exited" from="AttackDetector" to="." method="_on_attack_detector_body_exited"]
+[connection signal="area_entered" from="AttackBox" to="." method="_on_attack_box_area_entered"]

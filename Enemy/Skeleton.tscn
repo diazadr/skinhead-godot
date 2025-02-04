@@ -1,0 +1,269 @@
+[gd_scene load_steps=29 format=3 uid="uid://bu3f2kdmgsj8h"]
+
+[ext_resource type="PackedScene" uid="uid://otc0yhkplpv0" path="res://Enemy/Enemy.tscn" id="1_mfc57"]
+[ext_resource type="Texture2D" uid="uid://diit5s3f7p0p" path="res://Art/Enemy 04-1.png" id="2_gpfn5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1qoyr"]
+radius = 21.095
+
+[sub_resource type="Animation" id="Animation_gvyj8"]
+resource_name = "Idle-Down"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_uaac4"]
+resource_name = "Idle-Left"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_2lh8h"]
+resource_name = "Idle-Right"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="Animation" id="Animation_cr2ab"]
+resource_name = "Idle-Up"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+
+[sub_resource type="Animation" id="Animation_if5c4"]
+resource_name = "Move-Down"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_41kja"]
+resource_name = "Move-Left"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_nipmv"]
+resource_name = "Move-Right"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_0gv10"]
+resource_name = "Move-Up"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_5cptg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lwatu"]
+_data = {
+"Idle-Down": SubResource("Animation_gvyj8"),
+"Idle-Left": SubResource("Animation_uaac4"),
+"Idle-Right": SubResource("Animation_2lh8h"),
+"Idle-Up": SubResource("Animation_cr2ab"),
+"Move-Down": SubResource("Animation_if5c4"),
+"Move-Left": SubResource("Animation_41kja"),
+"Move-Right": SubResource("Animation_nipmv"),
+"Move-Up": SubResource("Animation_0gv10"),
+"RESET": SubResource("Animation_5cptg")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8mju1"]
+animation = &"Idle-Up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f7wd0"]
+animation = &"Idle-Down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1iqvt"]
+animation = &"Idle-Right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y0u8h"]
+animation = &"Idle-Left"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_lc117"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_8mju1")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_f7wd0")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_1iqvt")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_y0u8h")
+blend_point_3/pos = Vector2(-1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a70lo"]
+animation = &"Move-Right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_eekcy"]
+animation = &"Move-Left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ago7i"]
+animation = &"Move-Down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jnaho"]
+animation = &"Move-Up"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_lu6ux"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_a70lo")
+blend_point_0/pos = Vector2(1, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_eekcy")
+blend_point_1/pos = Vector2(-1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_ago7i")
+blend_point_2/pos = Vector2(0, 1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_jnaho")
+blend_point_3/pos = Vector2(0, -1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gw63i"]
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g8p3b"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_n0u0w"]
+states/Idle/node = SubResource("AnimationNodeBlendSpace2D_lc117")
+states/Idle/position = Vector2(412, 127)
+states/Start/position = Vector2(189, 100)
+states/Walk/node = SubResource("AnimationNodeBlendSpace2D_lu6ux")
+states/Walk/position = Vector2(617, 127)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_gw63i"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_g8p3b")]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1c4ob"]
+radius = 181.541
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jgfes"]
+radius = 18.1108
+
+[node name="Skeleton" instance=ExtResource("1_mfc57")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CircleShape2D_1qoyr")
+disabled = true
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_gpfn5")
+hframes = 3
+vframes = 4
+frame = 2
+
+[node name="AnimationPlayer" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_lwatu")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="3"]
+tree_root = SubResource("AnimationNodeStateMachine_n0u0w")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Idle/blend_position = Vector2(0.79017, -0.150442)
+parameters/Walk/blend_position = Vector2(0.0742857, -0.329787)
+
+[node name="CollisionShape2D" parent="AttackDetector" index="0"]
+shape = SubResource("CircleShape2D_1c4ob")
+
+[node name="CollisionShape2D" parent="AttackBox" index="0"]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_jgfes")
+
+[node name="EnemyHealth" parent="." index="6"]
+value = 4.0
