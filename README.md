@@ -8,7 +8,6 @@ The **Skinhead** game is a top-down game developed as part of my game developmen
 - **Godot Engine**: Open-source game engine used for development.
 - **GDScript**: Scripting language for game logic and mechanics.
 - **Tilemaps**: Used for level design and world-building.
-- **Pathfinding System**: Implements AI navigation for enemy movement.
 
 ## Setup
 1. Download and install [Godot Engine](https://godotengine.org/).
