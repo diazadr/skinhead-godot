@@ -1,6 +1,6 @@
 # Skinhead Game
 
-![Project Status](https://img.shields.io/badge/status-completed-brightgreen) [![License](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
+![Project Status](https://img.shields.io/badge/status-completed-brightgreen)
 
 The **Skinhead** game is a top-down game developed as part of my game development experience using Godot. It features navigation systems, asset management, and engaging gameplay mechanics to provide an immersive experience.
 
@@ -23,6 +23,3 @@ This project is **completed** and will not be further developed.
 
 ## Acknowledgements
 This project was inspired by tutorials from the [Game Development with Godot](https://www.youtube.com/playlist?list=PLNf5C5m0lhibGPgUkTgsMgO12VIHwqC7A) playlist.
-
-## License
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
